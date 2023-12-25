@@ -1,0 +1,10 @@
+<h1>Admin About</h1>
+<a href="/admin/service">Service</a><br>
+<a href="/admin/product">Product</a><br>
+<a href="/admin/page1">Page1</a><br>
+<a href="/admin/page2">Page2</a><br>
+<a href="/admin/page3">Page3</a><br>
+<a href="/admin/page4">Page4</a><br>
+<a href="/admin/page5">Page5</a><br>
+<a href="/admin/page6">Page6</a><br>
+<a href="/admin/page7">Page7</a><br>

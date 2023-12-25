@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use function Ramsey\Uuid\v1;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -231,5 +233,63 @@ Route::get('/data10/{m}', function ($m,){
      return " O'nliklar xonasi:$num2 ga teng <br> 
      Birliklar xonasi: $num3 ga teng";
  });
+
+
+Route::prefix('admin')->name('admin.')->group(function(){
+
+    Route::get('/about', function(){
+        return view('admin.about');
+    })->name('about');
+
+    Route::view('service', 'admin.service')->name('service');
+    Route::view('product', 'admin.product')->name('product');
+    Route::view('page1', 'admin.page1')->name('page1');
+    Route::view('page2', 'admin.page2')->name('page2');
+    Route::view('page3', 'admin.page3')->name('page3');
+    Route::view('page4', 'admin.page4')->name('page4');
+    Route::view('page5', 'admin.page5')->name('page5');
+    Route::view('page6', 'admin.page6')->name('page6');
+    Route::view('page7', 'admin.page7')->name('page7');
+    
+}) ;
+
+Route::prefix('client')->name('client.')->group(function(){
+
+    Route::get('/about', function(){
+        return view('client.about');
+    })->name('about');
+
+    Route::view('service', 'client.service')->name('service');
+    Route::view('product', 'client.product')->name('product');
+    Route::view('page1', 'client.page1')->name('page1');
+    Route::view('page2', 'client.page2')->name('page2');
+    Route::view('page3', 'client.page3')->name('page3');
+    Route::view('page4', 'client.page4')->name('page4');
+    Route::view('page5', 'client.page5')->name('page5');
+    Route::view('page6', 'client.page6')->name('page6');
+    Route::view('page7', 'client.page7')->name('page7');
+    
+}) ;
+
+
+Route::prefix('prog')->name('prog.')->group(function(){
+
+    Route::get('/about', function(){
+        return view('prog.about');
+    })->name('about');
+
+    Route::view('service', 'prog.service')->name('service');
+    Route::view('product', 'prog.product')->name('product');
+    Route::view('page1', 'prog.page1')->name('page1');
+    Route::view('page2', 'prog.page2')->name('page2');
+    Route::view('page3', 'prog.page3')->name('page3');
+    Route::view('page4', 'prog.page4')->name('page4');
+    Route::view('page5', 'prog.page5')->name('page5');
+    Route::view('page6', 'prog.page6')->name('page6');
+    Route::view('page7', 'prog.page7')->name('page7');
+    
+}) ;
+
+
 
 ?>
