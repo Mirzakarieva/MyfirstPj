@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\testController;
+use App\Http\Controllers\ForController;
+use App\Http\Controllers\BooleanController;
 use Illuminate\Support\Facades\Route;
 
 use function Ramsey\Uuid\v1;
@@ -235,41 +238,82 @@ Route::get('/data10/{m}', function ($m,){
  });
 
 
-Route::prefix('admin')->name('admin.')->group(function(){
+Route::get('/admin/about', [testController::class, 'adminAbout']) ;
+Route::get('/admin/service', [testController::class, 'adminService']) ;
+Route::get('/admin/product', [testController::class, 'adminProduct']) ;
 
-    Route::get('/about', function(){
-        return view('admin.about');
-    })->name('about');
 
-    Route::view('service', 'admin.service')->name('service');
-    Route::view('product', 'admin.product')->name('product');
-    Route::view('page1', 'admin.page1')->name('page1');
-    Route::view('page2', 'admin.page2')->name('page2');
-    Route::view('page3', 'admin.page3')->name('page3');
-    Route::view('page4', 'admin.page4')->name('page4');
-    Route::view('page5', 'admin.page5')->name('page5');
-    Route::view('page6', 'admin.page6')->name('page6');
-    Route::view('page7', 'admin.page7')->name('page7');
+Route::get('/client/about', [testController::class, 'clientAbout']) ;
+Route::get('/client/service', [testController::class, 'clientService']) ;
+Route::get('/client/product', [testController::class, 'clientProduct']) ;
+
+
+Route::get('/for1/{n}/{k}', [ForController::class, 'for1']) ;
+Route::get('/for2/{a}/{b}', [ForController::class, 'for2']) ;
+Route::get('/for3/{a}/{b}/{amount}', [ForController::class, 'for3']) ;
+Route::get('/for4/{a}/{cost}', [ForController::class, 'for4']) ;
+Route::get('/for5/{a}/{cost}', [ForController::class, 'for5']) ;
+Route::get('/for6/{a}', [ForController::class, 'for6']) ;
+Route::get('/for7/{a}/{b}/{amount}', [ForController::class, 'for7']) ;
+Route::get('/for8/{a}/{b}/{amount}', [ForController::class, 'for8']) ;
+Route::get('/for9/{a}/{b}/{amount}', [ForController::class, 'for9']) ;
+Route::get('/for10/{n}/{s}', [ForController::class, 'for10']) ;
+Route::get('/for11/{n}/{s}', [ForController::class, 'for11']) ;
+Route::get('/for12/{n}/{s}/{p}', [ForController::class, 'for12']) ;
+
+
+Route::get('/boolean1/{a}', [BooleanController::class, 'boolean1']) ;
+Route::get('/boolean2/{a}', [BooleanController::class, 'boolean2']) ;
+Route::get('/boolean3/{a}', [BooleanController::class, 'boolean3']) ;
+Route::get('/boolean4/{a}/{b}', [BooleanController::class, 'boolean4']) ;
+Route::get('/boolean5/{a}/{b}', [BooleanController::class, 'boolean5']) ;
+Route::get('/boolean6/{a}/{b}/{c}', [BooleanController::class, 'boolean6']) ;
+Route::get('/boolean7/{a}/{b}/{c}', [BooleanController::class, 'boolean7']) ;
+Route::get('/boolean8/{a}/{b}', [BooleanController::class, 'boolean8']) ;
+Route::get('/boolean9/{a}/{b}', [BooleanController::class, 'boolean9']) ;
+Route::get('/boolean10/{a}/{b}', [BooleanController::class, 'boolean10']) ;
+Route::get('/boolean11/{a}/{b}', [BooleanController::class, 'boolean11']) ;
+Route::get('/boolean12/{a}/{b}/{c}', [BooleanController::class, 'boolean12']) ;
+Route::get('/boolean13/{a}/{b}/{c}', [BooleanController::class, 'boolean13']) ;
+Route::get('/boolean14/{a}/{b}/{c}', [BooleanController::class, 'boolean14']) ;
+Route::get('/boolean15/{a}/{b}/{c}', [BooleanController::class, 'boolean15']) ;
+
+
+// Route::prefix('admin')->name('admin.')->group(function(){
+
+//     Route::get('/about', function(){
+//         return view('admin.about');
+//     })->name('about');
+
+//     Route::view('service', 'admin.service')->name('service');
+//     Route::view('product', 'admin.product')->name('product');
+//     Route::view('page1', 'admin.page1')->name('page1');
+//     Route::view('page2', 'admin.page2')->name('page2');
+//     Route::view('page3', 'admin.page3')->name('page3');
+//     Route::view('page4', 'admin.page4')->name('page4');
+//     Route::view('page5', 'admin.page5')->name('page5');
+//     Route::view('page6', 'admin.page6')->name('page6');
+//     Route::view('page7', 'admin.page7')->name('page7');
     
-}) ;
+// }) ;
 
-Route::prefix('client')->name('client.')->group(function(){
+// Route::prefix('client')->name('client.')->group(function(){
 
-    Route::get('/about', function(){
-        return view('client.about');
-    })->name('about');
+//     Route::get('/about', function(){
+//         return view('client.about');
+//     })->name('about');
 
-    Route::view('service', 'client.service')->name('service');
-    Route::view('product', 'client.product')->name('product');
-    Route::view('page1', 'client.page1')->name('page1');
-    Route::view('page2', 'client.page2')->name('page2');
-    Route::view('page3', 'client.page3')->name('page3');
-    Route::view('page4', 'client.page4')->name('page4');
-    Route::view('page5', 'client.page5')->name('page5');
-    Route::view('page6', 'client.page6')->name('page6');
-    Route::view('page7', 'client.page7')->name('page7');
+//     Route::view('service', 'client.service')->name('service');
+//     Route::view('product', 'client.product')->name('product');
+//     Route::view('page1', 'client.page1')->name('page1');
+//     Route::view('page2', 'client.page2')->name('page2');
+//     Route::view('page3', 'client.page3')->name('page3');
+//     Route::view('page4', 'client.page4')->name('page4');
+//     Route::view('page5', 'client.page5')->name('page5');
+//     Route::view('page6', 'client.page6')->name('page6');
+//     Route::view('page7', 'client.page7')->name('page7');
     
-}) ;
+// }) ;
 
 
 Route::prefix('prog')->name('prog.')->group(function(){
